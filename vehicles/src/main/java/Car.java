@@ -1,7 +1,7 @@
 package main.java;
 
 public class Car extends Vehicle {
-    String Type;
+    private String Type;
 
     public Car(long id, String type) {
         super(id);
@@ -14,5 +14,10 @@ public class Car extends Vehicle {
 
     public void setType(String type) {
         Type = type;
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println("Car Id: " + getId() + ", Car type: " + getType());
     }
 }

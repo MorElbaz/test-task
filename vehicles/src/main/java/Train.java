@@ -1,7 +1,7 @@
 package main.java;
 
 public class Train extends Vehicle{
-    int numOfTrainCars;
+    private int numOfTrainCars;
 
     public Train(long id, int numOfTrainCars) {
         super(id);
@@ -14,5 +14,10 @@ public class Train extends Vehicle{
 
     public void setNumOfTrainCars(int numOfTrainCars) {
         this.numOfTrainCars = numOfTrainCars;
+    }
+
+    @Override
+    public void printDetails() {
+        System.out.println("Train Id: " + getId() + ", Number of train cars: " + getNumOfTrainCars());
     }
 }
