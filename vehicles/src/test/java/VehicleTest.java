@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 public class VehicleTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
+    private static final PrintStream originalOut = System.out;
 
     @Before
     public void setUpStreams() {
@@ -28,7 +28,7 @@ public class VehicleTest {
     }
 
     @AfterClass
-    public void returnOutStreamToOriginal() {
+    public static void returnOutStreamToOriginal() {
         System.setOut(originalOut);
     }
 
@@ -55,10 +55,10 @@ public class VehicleTest {
         vehicles.add(new Train(4, 5));
 
         Vehicle.printVehicleDetails(vehicles);
-        assertEquals("Car Id: 1, Car Type: BMW\n" +
+        assertEquals("Car Id: 1, Car type: BMW\n" +
                      "Train Id: 2, Number of train cars: 6\n" +
-                     "Car Id: 3, Car Type:Fiat\n" +
-                     "Train Id: 2, Number of train cars: 5\n", outContent.toString());
+                     "Car Id: 3, Car type: Fiat\n" +
+                     "Train Id: 4, Number of train cars: 5\n", outContent.toString());
     }
 
 
